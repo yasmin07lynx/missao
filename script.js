@@ -43,5 +43,10 @@ const afirmacao = opcaoSelecionada.afirmacao;
 historiaFinal += afirmacao + " ";
 atual++
 mostraPergunta();
+}
 
+function mostraResultado(){
+    caixaPerguntas.textContent = "síntese final...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
 }
