@@ -38,3 +38,10 @@ function mostraAlternativas(){
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
+function respostaSelecionada(opcaoSelecionada){
+const afirmacao = opcaoSelecionada.afirmacao;
+historiaFinal = afirmacao;
+atual++
+mostraPergunta();
+
+}
