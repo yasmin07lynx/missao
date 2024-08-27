@@ -1,40 +1,40 @@
 const caixaPrincipal = document.querySelector(".caixa-principal");
-const caixaPergunta = document.querySelector(".caixa-pergunta");
-const caixaAlternativa = document.querySelector(".caixa-alternativa");
+const caixaPerguntas = document.querySelector(".caixa-pergunta");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
-    {
-        enunciado: "Qual a melhor maneira de combater o desmatamento?", 
-        alternativa:[
-            "Reflorestamento de área degradadas", 
-            "Implementação de leis mais rigorosas para a proteção das florestas"
-        ]
+    { //primeiro objeto da lista de perguntas
+        enunciado: "qual a melhor maneira de se combater o desmatamento?", 
+        alternativas: ["reflorestamento de áreas degradadas",
+                        "implementação de leis mais rigorosas para a proteção das florestas"]
     },
-    {
-        enunciado: "Como podemos combater a desigualdade social de forma eficaz e sustentável?", 
-        alternativa:[
-            "Implementar programas de educação e formação profissional acessíveis a todos, capacitando indivíduos de comunidades desfavorecidas.", 
-            "políticas de redistribuição de renda e oportunidades,ppromovendo uma distribuição igual dos recursos e do acesso aos benefícios"
-        ]
-    },
-    ];
-    
-    let atual = 0;
-let perguntaAtual;
 
-function mostraPergunta(){
-    perguntaAtual = perguntas[atual];
-    caixaPergunta.textContent = perguntaAtual.enunciado;
-    caixaAlternativa.textContent = "",
-    mostraAlternativa();
+
+    { //segundo objeto da lista de perguntas
+        enunciado: "como podemos combater a desigualdade social de forma mais eficaz e sustentável?", 
+        alternativas: ["implementar programas de educação e formação profissional acessíveis a todos",
+                        "políticas de redistribuição de renda e oportunidades"]
+    },
+
+];
+
+let atual = 0;
+let perguntaAtual;
+let historiaFinal
+
+function mostraPergunta(){ //função para mostrar a pergunta
+    perguntaAtual = perguntas[atual]; //guardando a lista de perguntas dentro da variável perguntaAtual
+    caixaPerguntas.textContent = perguntaAtual.enunciado; //manipulação 
+    caixaAlternativa.textContent = "";
+    mostraAlternativas();
 }
 
-function mostraAlternativa(){
-    for(const alternativa of perguntaAtual.alternativa){
-        const botaoAlternativa = document.createElement("button");
-        botaoAlternativa.textContent = alternativa;
-        caixaAlternativa.appendChild(botaoAlternativa);
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas){
+        const botaoAlternativas = document.createElement ("button");
+        botaoAlternativas.textContent = alternativa;
+        caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
